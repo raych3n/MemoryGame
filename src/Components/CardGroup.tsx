@@ -15,7 +15,7 @@ interface CardGroupProps {
 
 const CardGroup: React.FC<CardGroupProps> = ({ cards, flippedIndices, matchedIndices, onCardClick }) => {
   return (
-    <div className={`grid grid-cols-${Math.ceil(Math.sqrt(cards.length))} gap-${cards.length < 9 ? '6' : '4'} justify-items-center`}>
+    <div className={`grid grid-cols-${Math.ceil(Math.sqrt(cards.length))} gap-6 justify-items-center`}>
       {cards.map((card, index) => (
         <Card
           key={card.id}
