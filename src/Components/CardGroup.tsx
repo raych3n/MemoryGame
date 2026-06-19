@@ -1,5 +1,5 @@
-import React from 'react';
-import Card from './Card';
+import React from "react";
+import Card from "./Card";
 
 interface CardData {
   id: number;
@@ -13,9 +13,18 @@ interface CardGroupProps {
   onCardClick: (index: number) => void;
 }
 
-const CardGroup: React.FC<CardGroupProps> = ({ cards, flippedIndices, matchedIndices, onCardClick }) => {
+const CardGroup: React.FC<CardGroupProps> = ({
+  cards,
+  flippedIndices,
+  matchedIndices,
+  onCardClick,
+}) => {
+
+  const gridColsClass = cards.length == 12 ? 'grid-cols-4' : `grid-cols-3`;
   return (
-    <div className={`grid grid-cols-${Math.ceil(Math.sqrt(cards.length))} gap-6 justify-items-center`}>
+    <div
+      className={`grid ${gridColsClass} gap-6 justify-items-center`}
+    >
       {cards.map((card, index) => (
         <Card
           key={card.id}
